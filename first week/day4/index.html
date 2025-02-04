@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Learning Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        table, th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: left;
+        }
+        .btn {
+            padding: 10px 15px;
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: darkblue;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>HTML Learning Guide</h1>
+        <p>This page covers essential HTML elements including headings, paragraphs, lists, links, images, forms, tables, and semantic elements.</p>
+    </header>
+
+    <section>
+        <h2>1. Headings & Paragraphs</h2>
+        <h1>Main Heading (h1)</h1>
+        <h2>Subheading (h2)</h2>
+        <h3>Sub-subheading (h3)</h3>
+        <p>This is a paragraph. HTML paragraphs are defined using the <code>&lt;p&gt;</code> tag.</p>
+    </section>
+
+    <section>
+        <h2>2. Lists</h2>
+        <h3>Ordered List</h3>
+        <ol>
+            <li>First item</li>
+            <li>Second item</li>
+            <li>Third item</li>
+        </ol>
+        
+        <h3>Unordered List</h3>
+        <ul>
+            <li>Apple</li>
+            <li>Banana</li>
+            <li>Cherry</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>3. Links & Images</h2>
+        <p>Visit <a href="https://www.example.com" target="_blank">Example Website</a>.</p>
+        <img src="https://via.placeholder.com/150" alt="Sample Image">
+    </section>
+
+    <section>
+        <h2>4. Tables</h2>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>City</th>
+            </tr>
+            <tr>
+                <td>John Doe</td>
+                <td>25</td>
+                <td>New York</td>
+            </tr>
+            <tr>
+                <td>Jane Smith</td>
+                <td>30</td>
+                <td>London</td>
+            </tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>5. Forms, Input Fields, Buttons, and Labels</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name"><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email"><br><br>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" placeholder="Type your message"></textarea><br><br>
+
+            <button type="submit" class="btn">Submit</button>
+        </form>
+    </section>
+
+    <article>
+        <h2>6. Semantic HTML Elements</h2>
+        <p>Semantic elements improve accessibility and SEO. Common elements include:</p>
+        <ul>
+            <li><code>&lt;header&gt;</code> - Defines introductory content.</li>
+            <li><code>&lt;section&gt;</code> - Groups related content.</li>
+            <li><code>&lt;article&gt;</code> - Represents independent content.</li>
+            <li><code>&lt;footer&gt;</code> - Contains footer information.</li>
+        </ul>
+    </article>
+
+    <footer>
+        <p>&copy; 2025 HTML Learning Guide. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
