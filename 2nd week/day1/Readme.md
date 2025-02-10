@@ -193,5 +193,3 @@ Final color → **Yellow** (Inline style wins because `1000 > 100 > 10 > 1`).
 
 ### **Conclusion**
 Understanding CSS, selectors, and specificity helps you write clean, efficient, and maintainable styles. By practicing different selectors and specificity rules, you can create advanced styling solutions while avoiding conflicts.
-
-Would you like to see real-world examples or exercises?
