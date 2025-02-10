@@ -4,11 +4,14 @@ Tables allow us to display data in rows and columns.
 #### **Basic Table Example:**
 ```html
 <table border="1">
+<thead>
   <tr>
     <th>Name</th>
     <th>Age</th>
     <th>Country</th>
   </tr>
+</thead>
+<tbody>
   <tr>
     <td>John</td>
     <td>25</td>
@@ -19,6 +22,7 @@ Tables allow us to display data in rows and columns.
     <td>22</td>
     <td>UK</td>
   </tr>
+</thead>
 </table>
 ```
 ✅ **Key elements**:
@@ -26,7 +30,8 @@ Tables allow us to display data in rows and columns.
 - `<tr>`: Table row.
 - `<th>`: Table header.
 - `<td>`: Table data/cell.
-
+- `<thead>`: Table head.
+- `<tbody>`: Table body.
 ---
 
 ### 2️⃣ **Input Fields in HTML**
