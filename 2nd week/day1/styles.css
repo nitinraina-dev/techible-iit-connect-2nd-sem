@@ -1,0 +1,89 @@
+/* Universal Selector (Applies to all elements) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Type Selector */
+p {
+    font-size: 18px;
+    color: black;
+}
+
+/* ID Selector */
+#main-heading {
+    color: blue;
+    font-size: 24px;
+    text-align: center;
+}
+
+/* Class Selector */
+.highlight {
+    color: green;
+    font-weight: bold;
+}
+
+/* Grouping Selector */
+h1, h2, h3 {
+    font-family: Arial, sans-serif;
+}
+
+/* Descendant Selector */
+.container p {
+    background-color: lightgray;
+    padding: 10px;
+}
+
+/* Child Selector */
+.container > p {
+    border: 1px solid black;
+}
+
+/* Adjacent Sibling Selector */
+h2 + p {
+    color: red;
+    font-style: italic;
+}
+
+/* General Sibling Selector */
+h2 ~ p {
+    font-weight: bold;
+}
+
+/* Pseudo-Class - Hover */
+a:hover {
+    color: orange;
+    text-decoration: underline;
+}
+
+/* Pseudo-Class - First Child */
+p:first-child {
+    text-transform: uppercase;
+}
+
+/* Pseudo-Class - nth-child */
+.container p:nth-child(2) {
+    color: purple;
+}
+
+/* Pseudo-Element - First Letter */
+p::first-letter {
+    font-size: 24px;
+    color: red;
+    font-weight: bold;
+}
+
+/* Pseudo-Element - Before */
+p::before {
+    content: "👉 ";
+    color: gray;
+}
+
+/* Specificity Example */
+#main-heading { color: red; } /* ID Specificity (100) */
+.highlight { color: blue; }   /* Class Specificity (10) */
+p { color: green; }          /* Element Specificity (1) */
+
+/* Inline Style (Will Override Everything if Used) */
+/* <p style="color: yellow;">This text will be yellow.</p> */

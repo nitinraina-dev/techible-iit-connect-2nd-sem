@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors & Specificity Demo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1 id="main-heading">CSS Selectors & Specificity</h1>
+
+    <p class="highlight">This is a paragraph with a class.</p>
+    <p>This is a normal paragraph.</p>
+
+    <div class="container">
+        <p>Paragraph inside a div.</p>
+        <p class="highlight">Another paragraph inside a div with a class.</p>
+        <p>Third paragraph inside a div.</p>
+    </div>
+
+    <div class="box">
+        <p class="highlight">Paragraph inside another div.</p>
+    </div>
+
+    <h2>Sibling Selectors</h2>
+    <p>Paragraph after h2 (Adjacent Sibling Selector applies).</p>
+    <p>Another paragraph after h2.</p>
+
+    <a href="#">Hover over me</a>
+
+</body>
+</html>
