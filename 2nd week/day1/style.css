@@ -1,0 +1,7 @@
+div>h1{
+color: rebeccapurple;
+}
+
+h1~p{
+    color: blue;
+}

@@ -1,0 +1,29 @@
+
+        /* Container to center the box */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        /* Box with content, padding, border, and margin */
+        .box {
+            width: 300px; /* Content width */
+            height: 150px; /* Content height */
+            background-color: lightyellow; /* Content area color */
+
+            padding: 20px; /* Space between content and border */
+            background-clip: content-box; /* Ensures padding does not change background color */
+
+            border: 10px solid darkblue; /* Border surrounding the padding */
+            
+            margin: 30px; /* Space between this box and other elements */
+            
+            text-align: center;
+            line-height: 150px; /* Align text vertically */
+            font-size: 18px;
+            font-weight: bold;
+            color: darkblue;
+        }
