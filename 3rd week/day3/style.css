@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.box {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    color: white;
+    font-weight: bold;
+}
+
+/* Transition Example */
+.transition-box {
+    background-color: blue;
+    transition: background-color 0.5s ease-in-out, transform 0.5s ease;
+}
+
+.transition-box:hover {
+    background-color: red;
+    transform: scale(1.2);
+}
+
+/* Keyframe Animation */
+@keyframes colorChange {
+    from { background-color: blue; }
+    to { background-color: red; }
+}
+
+.animation-box {
+    background-color: blue;
+    animation: colorChange 2s infinite alternate;
+}
+
+/* Bouncing Ball */
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-50px); }
+    100% { transform: translateY(0); }
+}
+
+.ball {
+    width: 50px;
+    height: 50px;
+    background-color: orange;
+    border-radius: 50%;
+    position: relative;
+    animation: bounce 1s infinite;
+    margin: 20px auto;
+}
+
+/* Rotating Box */
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.rotate-box {
+    background-color: green;
+    animation: rotate 2s linear infinite;
+}
