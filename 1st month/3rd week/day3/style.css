@@ -17,7 +17,7 @@ body {
 /* Transition Example */
 .transition-box {
     background-color: blue;
-    transition: background-color 0.5s ease-in-out, transform 0.5s ease;
+    /* transition: background-color 0.5s ease-in-out, transform 0.5s ease; */
 }
 
 .transition-box:hover {
@@ -39,7 +39,7 @@ body {
 /* Bouncing Ball */
 @keyframes bounce {
     0% { transform: translateY(0); }
-    50% { transform: translateY(-50px); }
+    50% { transform: translateY(-100px); transform: scale(2); }
     100% { transform: translateY(0); }
 }
 
@@ -49,7 +49,7 @@ body {
     background-color: orange;
     border-radius: 50%;
     position: relative;
-    animation: bounce 1s infinite;
+    animation: bounce 1s infinite ;
     margin: 20px auto;
 }
 
@@ -61,5 +61,5 @@ body {
 
 .rotate-box {
     background-color: green;
-    animation: rotate 2s linear infinite;
+    animation: rotate 0.25s linear infinite;
 }
