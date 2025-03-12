@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            color: white;
+        }
+
+        aside {
+            background-color: brown;
+            width: 20%;
+            height: 100vh;
+        }
+
+        main {
+            width: 80%;
+            height: 100vh;
+            color: black;
+        }
+        @media (max-width:768px){
+            aside{
+                display: none;
+            }
+        }
+        @media (max-width:468px){
+            aside{
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <aside class="sidebar">Sidebar (Only visible on large screens)</aside>
+    <main class="content">
+        <h1>Welcome to My Responsive Page</h1>
+        <p>This page changes background color and layout based on screen size.</p>
+    </main>
+</body>
+
+</html>
