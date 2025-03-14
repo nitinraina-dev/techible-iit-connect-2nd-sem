@@ -1,41 +1,190 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  </head>
-  <body>
-    <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
-          </tr>
-        </tbody>
-      </table>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Transitions Examples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        
+        .container {
+            text-align: center;
+        }
+
+        /* 1. Smooth Background Color Change */
+        .button {
+            background-color: blue;
+            color: white;
+            padding: 10px 20px;
+            transition: background-color 0.5s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: red;
+        }
+
+        /* 2. Width Expansion */
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            transition: width 0.5s ease-in-out;
+        }
+        .box:hover {
+            width: 200px;
+        }
+
+        /* 3. Fading Effect */
+        .text {
+            font-size: 20px;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+        .text:hover {
+            opacity: 0.3;
+        }
+
+        /* 4. Rotate on Hover */
+        .square {
+            width: 100px;
+            height: 100px;
+            background: purple;
+            transition: transform 0.5s ease-in-out;
+        }
+        .square:hover {
+            transform: rotate(45deg);
+        }
+
+        /* 5. Scale (Zoom In) Effect */
+        .image {
+            width: 150px;
+            transition: transform 0.3s ease;
+        }
+        .image:hover {
+            transform: scale(1.2);
+        }
+
+        /* 6. Button Press Effect (Shrink) */
+        .press-button {
+            padding: 10px 20px;
+            background-color: orangered;
+            transition: transform 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .press-button:active {
+            transform: scale(0.9);
+        }
+
+        /* 7. Border Radius Transition */
+        .circle {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            transition: border-radius 0.5s ease-in-out;
+        }
+        .circle:hover {
+            border-radius: 50%;
+        }
+
+        /* 8. Sliding Text Effect */
+        .sliding-text {
+            position: relative;
+            left: 0;
+            transition: left 0.5s ease;
+        }
+        .sliding-text:hover {
+            left: 20px;
+        }
+
+        /* 9. Shadow Glow Effect */
+        .card {
+            width: 200px;
+            height: 100px;
+            background: white;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            transition: box-shadow 0.5s ease;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .card:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+        }
+
+        /* 10. Text Color Transition */
+        .link {
+            color: black;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.5s ease;
+        }
+        .link:hover {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <button class="button">Hover Me</button>
+        <p>Background Color Change</p>
+    </div>
+
+    <div class="container">
+        <div class="box"></div>
+        <p>Width Expansion</p>
+    </div>
+
+    <div class="container">
+        <p class="text">Hover to Fade</p>
+        <p>Fading Effect</p>
+    </div>
+
+    <div class="container">
+        <div class="square"></div>
+        <p>Rotate on Hover</p>
+    </div>
+
+    <div class="container">
+        <img class="image" src="https://via.placeholder.com/150" alt="Image">
+        <p>Zoom In Effect</p>
+    </div>
+
+    <div class="container">
+        <button class="press-button">Press Me</button>
+        <p>Button Press Effect</p>
+    </div>
+
+    <div class="container">
+        <div class="circle"></div>
+        <p>Border Radius Transition</p>
+    </div>
+
+    <div class="container">
+        <p class="sliding-text">Slide Me →</p>
+        <p>Sliding Text Effect</p>
+    </div>
+
+    <div class="container">
+        <div class="card">Shadow Glow</div>
+        <p>Shadow Glow Effect</p>
+    </div>
+
+    <div class="container">
+        <a href="#" class="link">Hover over me</a>
+        <p>Text Color Transition</p>
+    </div>
+
+</body>
 </html>
