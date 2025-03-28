@@ -6,13 +6,13 @@
 
 
 // 2, 4,9,100,0,12,999
-res = 2;
-res = 2;
-res = 2;
-res = 2;
-res = 0;
-res = 0;
-res = 0
+// res = 2;
+// res = 2;
+// res = 2;
+// res = 2;
+// res = 0;
+// res = 0;
+// res = 0;
 
 
 
@@ -101,14 +101,23 @@ res = 0
 
 let diceRoll;
 
+
 do{
     diceRoll= Math.floor( Math.random()*6 + 1);
     console.log(`diced roll is ${diceRoll}`);
-    
+
 }while(diceRoll!==6);
 console.log("won the game");
 
+// let arr = [1, 3, 5, 8, 2]
+ 
+// let num=12;
+// let guess=0;
+// while(num!==guess){
+//     guess=parseInt(prompt("enter  a number"));
 
+// }
+// console.log("winner");
 
 
 
