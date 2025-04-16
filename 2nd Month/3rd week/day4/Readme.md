@@ -273,12 +273,13 @@ element.style.cssText = "color: white; background-color: blue; font-size: 20px;"
 
 
 
+---
 
  **Creating and Removing Elements from the DOM**
 
 **🎯 Goal: Dynamically add or remove elements using JavaScript**
 
----
+
 
 ## 📘 Core Concepts
 
@@ -439,12 +440,12 @@ element.remove();
 Sweet, let’s dive into the final and **most interactive** day of your DOM journey!
 
 
-
+---
 
 
 **🎯 Goal: Handle user interactions with events like click, keydown, etc.**
 
----
+
 
 ## 📘 Core Concepts
 
