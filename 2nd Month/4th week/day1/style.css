@@ -1,0 +1,8 @@
+.target{
+    padding: 100px;
+    background-color: blue;
+}
+#parent{
+    padding: 50px;
+    background-color: red;
+}

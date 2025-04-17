@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .btn{
+        .btn {
             display: inline-block;
             padding: 10px 20px;
             background-color: #007BFF;
@@ -14,24 +15,41 @@
             border-radius: 20px;
         }
     </style>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="btn">
         i am a button
     </div>
 
 
-    <div>
+    <div class="target">
         <button>button 1</button>
         <button>button 2</button>
         <button>button 3</button>
     </div>
+    <form>
+        <button>click here</button>
+    </form>
 
-    <script>
-        document.getElementsByClassName("btn")[0].addEventListener("click", function(e) {
-            alert("Button clicked!");
-            console.log(e)
-        });
+
+
+    <div id="parent">
+        <button id="child">Click me</button>
+    </div>
+
+
+
+
+
+
+    
+    <script src="script.js">
+
+
+
     </script>
 </body>
+
 </html>
