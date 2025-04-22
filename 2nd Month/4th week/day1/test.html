@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            border: 0;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            background-color: blue;
+            padding: 20px 20px;
+            color: white;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            display: inline-block;
+            border-radius: 3px;
+
+            width: 20px;
+            height: 3px;
+            background-color: white;
+        }
+
+@media(max-width:768px){
+
+    .nav-links{
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: blue;
+        display: none;
+        flex-direction: column;
+        padding:30px;
+
+    }
+    .hamburger{
+        display: flex;
+    }
+    .nav-links.active{
+        display: flex;
+    }
+}
+
+
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">Mysite</div>
+        <div class="nav-links">
+            <a href="">Home</a><a href="">About</a><a href="">Contact</a>
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+    <script>
+
+        let navLinks=document.querySelector('.nav-links');
+        let hamburger=document.querySelector('.hamburger');
+hamburger.addEventListener("click",()=>{
+    navLinks.classList.toggle("active")
+})
+
+    </script>
+</body>
+
+</html>

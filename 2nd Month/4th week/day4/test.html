@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To-Do List + LocalStorage</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: sans-serif;
+      background: #f3f4f6;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 60px;
+      min-height: 100vh;
+    }
+
+    .todo-app {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    input[type="text"] {
+      flex-grow: 1;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    button {
+      padding: 10px 16px;
+      border: none;
+      border-radius: 8px;
+      background-color: #3b82f6;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #2563eb;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #f9fafb;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+    }
+
+    .left-section {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-grow: 1;
+    }
+
+    .task-text {
+      flex-grow: 1;
+    }
+
+    .task-done .task-text {
+      text-decoration: line-through;
+      color: #9ca3af;
+    }
+
+    .edit-input {
+      flex-grow: 1;
+      padding: 6px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-right: 10px;
+    }
+
+    .edit-btn, .delete-btn {
+      margin-left: 10px;
+      font-size: 0.9rem;
+      padding: 6px 10px;
+      background-color: #e5e7eb;
+      color: #111827;
+      border-radius: 6px;
+      cursor: pointer;
+      border: none;
+    }
+
+    .edit-btn:hover {
+      background-color: #d1d5db;
+    }
+
+    .delete-btn:hover {
+      background-color: #f87171;
+      color: white;
+    }
+
+    input[type="checkbox"] {
+      transform: scale(1.2);
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="todo-app">
+    <h2>My To-Do List</h2>
+    <form id="todo-form">
+      <input type="text" id="todo-input" placeholder="Add a task..." required />
+      <button type="submit">Add</button>
+    </form>
+    <ul id="todo-list"></ul>
+  </div>
+
+  <script>
+    const form = document.getElementById('todo-form');
+    const input = document.getElementById('todo-input');
+    const list = document.getElementById('todo-list');
+
+    let tasks = [];
+
+    // Load from localStorage when page loads
+    window.addEventListener('DOMContentLoaded', () => {
+      const stored = localStorage.getItem('tasks');
+      if (stored) {
+        tasks = JSON.parse(stored);
+        renderTasks();
+      }
+    });
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const taskText = input.value.trim();
+      if (taskText !== '') {
+        tasks.push({ text: taskText, done: false });
+        input.value = '';
+        saveTasks();
+        renderTasks();
+      }
+    });
+
+    function saveTasks() {
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+    }
+
+    function renderTasks() {
+      list.innerHTML = '';
+      tasks.forEach((task, index) => {
+        const li = document.createElement('li');
+        if (task.done) li.classList.add('task-done');
+
+        li.innerHTML = `
+          <div class="left-section">
+            <input type="checkbox" class="task-check" ${task.done ? 'checked' : ''} data-index="${index}" />
+            <span class="task-text">${task.text}</span>
+          </div>
+          <div class="right-section">
+            <button class="edit-btn" data-index="${index}">Edit</button>
+            <button class="delete-btn" data-index="${index}">Delete</button>
+          </div>
+        `;
+        list.appendChild(li);
+      });
+    }
+
+    list.addEventListener('click', function (e) {
+      const index = e.target.dataset.index;
+
+      // DELETE
+      if (e.target.classList.contains('delete-btn')) {
+        tasks.splice(index, 1);
+        saveTasks();
+        renderTasks();
+      }
+
+      // DONE
+      else if (e.target.classList.contains('task-check')) {
+        tasks[index].done = e.target.checked;
+        saveTasks();
+        renderTasks();
+      }
+
+      // EDIT / SAVE
+      else if (e.target.classList.contains('edit-btn')) {
+        const li = e.target.closest('li');
+        const leftSection = li.querySelector('.left-section');
+        const task = tasks[index];
+        const isEditing = li.classList.contains('editing');
+
+        if (isEditing) {
+          const inputField = leftSection.querySelector('.edit-input');
+          const newText = inputField.value.trim();
+
+          if (newText !== '') {
+            task.text = newText;
+            li.classList.remove('editing');
+            e.target.textContent = 'Edit';
+            saveTasks();
+            renderTasks();
+          }
+        } else {
+          const span = leftSection.querySelector('.task-text');
+          const inputField = document.createElement('input');
+          inputField.type = 'text';
+          inputField.value = span.textContent;
+          inputField.className = 'edit-input';
+
+          leftSection.replaceChild(inputField, span);
+          li.classList.add('editing');
+          e.target.textContent = 'Save';
+        }
+      }
+    });
+  </script>
+</body>
+</html>
