@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+// const myPromise= new Promise ((resolve,reject)=>{
+//     const x= 10;
+//     const y= 20;
+//     if (x+y>20){
+//         resolve("Success");
+//     }else{
+//         reject("Failed");
+//     }
+// })
+ 
+// myPromise
+// .then((m)=>{
+//     console.log(m);
+// })
+// .catch((n)=>{
+//     console.log(n);
+    
+// })
+
+
+const myPromise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    reject("✅ Failure");
+    // Or: reject("❌ Failed!");
+  }, 1000);
+});
+
+
+myPromise.then((message)=>{
+    console.log(message);
+    
+}).catch((message)=>{
+    console.log(message);
+})
+
+    </script>
+</body>
+</html>
