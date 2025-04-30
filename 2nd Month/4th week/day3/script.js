@@ -5,12 +5,29 @@
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      const taskText = input.value.trim();
-      if (taskText !== '') {
-        addTask(taskText);
-        input.value = '';
-      }
+    let taskText=input.value.trim();
+    if(taskText !== ''){
+      addTask(taskText);
+      input.value=''
+    }
     });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     function addTask(text) {
       const li = document.createElement('li');
@@ -26,7 +43,6 @@
         </div>
       `;
 
-      li.setAttribute('data-task', text);
       list.appendChild(li);
     }
 
